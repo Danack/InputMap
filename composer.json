@@ -17,5 +17,11 @@
         "psr-0": {
             "VarMapTest\\": "test/"
         }
+    },
+    "config": {
+      "platform": {
+        "php": "7.0"
+      }
     }
+
 }
