@@ -26,5 +26,6 @@
     "psr-0": {
       "VarMapTest\\": "test/"
     }
-  }
+  },
+  "prefer-stable": true
 }
