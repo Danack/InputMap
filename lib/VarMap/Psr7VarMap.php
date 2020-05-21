@@ -87,4 +87,18 @@ class Psr7VarMap implements VarMap
 
         return $params;
     }
+
+    public function toArray(): array
+    {
+        $params = $this->serverRequest->getQueryParams();
+        $body = $this->serverRequest->getParsedBody();
+
+        if (is_array($body) === true) {
+            foreach ($body as $key => $value) {
+                $params[$key] = $value;
+            }
+        }
+
+        return $params;
+    }
 }

@@ -108,4 +108,23 @@ class Psr7InputMapWithVarMap implements VarMap
 
         return array_merge($requestVariableNames, $varmapNames);
     }
+
+
+    public function toArray(): array
+    {
+        $params = $this->serverRequest->getQueryParams();
+        $body = $this->serverRequest->getParsedBody();
+
+        if (is_array($body) === true) {
+            foreach ($body as $key => $value) {
+                $params[$key] = $value;
+            }
+        }
+
+        foreach ($this->varMap->toArray() as $key => $value) {
+            $params[$key] = $value;
+        };
+
+        return $params;
+    }
 }

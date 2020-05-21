@@ -56,4 +56,13 @@ class ArrayVarMap implements VarMap
     {
         return array_keys($this->variables);
     }
+
+    /**
+     * Get an array containing all of the variables by name
+     * @return array
+     */
+    public function toArray(): array
+    {
+        return $this->variables;
+    }
 }

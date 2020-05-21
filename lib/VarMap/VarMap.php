@@ -30,4 +30,10 @@ interface VarMap
      * @return string[]
      */
     public function getNames();
+
+    /**
+     * Get an array containing all of the variables by name
+     * @return array
+     */
+    public function toArray(): array;
 }
